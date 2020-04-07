@@ -46,8 +46,7 @@ pipeline {
             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
                     subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
-                    replyTo: '$DEFAULT_REPLYTO',
-                    to: '$DEFAULT_RECIPIENTS'
+                    to: 'joanna.nosek@intel.com'
         }
     }
 }
