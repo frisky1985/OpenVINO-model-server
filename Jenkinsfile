@@ -43,7 +43,7 @@ pipeline {
 
     post {
         always {
-            emailext body: "${currentBuild.curreomResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider']],
                     subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
